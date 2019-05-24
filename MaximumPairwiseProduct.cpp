@@ -45,7 +45,7 @@ int fastMaxPairwise(const vector<int>& numbers) {
 }
 
 int main() {
-	//sterss testing two algorithms, a slower and faster
+	//Stress testing two algorithms, a slower and faster
 	while (1) {
 		int n; //= 5;
 		n = rand() % 50 + 1;
@@ -60,7 +60,7 @@ int main() {
 		}
 		cout << endl;
 
-		//fail condition
+		//Stress Failure condition
 		if (maxPairwiseProduct(numbers) != fastMaxPairwise(numbers)) {
 			cout << "Failed with: " << maxPairwiseProduct(numbers)<<"      "<< fastMaxPairwise(numbers) << endl;
 			return 0;
