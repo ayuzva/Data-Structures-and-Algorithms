@@ -44,6 +44,22 @@ int fastMaxPairwise(const vector<int>& numbers) {
 	return a * b;
 }
 
+int evenFasterPairwise(const vector<int>& numbers) {
+	int n = numbers.size();//length of the vector
+	int a=0;
+	int b=0;
+
+	for (int i = 0; i < n; ++i) {
+		if (numbers[i] > a) {
+			b = a;
+			a = numbers[i];
+		}
+	}
+
+	return a * b;
+}
+
+
 int main() {
 	//Stress testing two algorithms, a slower and faster
 	while (1) {
@@ -62,7 +78,7 @@ int main() {
 
 		//Stress Failure condition
 		if (maxPairwiseProduct(numbers) != fastMaxPairwise(numbers)) {
-			cout << "Failed with: " << maxPairwiseProduct(numbers)<<"      "<< fastMaxPairwise(numbers) << endl;
+			cout << "Failed with: " << maxPairwiseProduct(numbers)<<"      "<< evenFasterPairwise(numbers) << endl;
 			return 0;
 		}
 	}
