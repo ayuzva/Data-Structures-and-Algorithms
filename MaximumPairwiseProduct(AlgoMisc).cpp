@@ -44,15 +44,18 @@ int fastMaxPairwise(const vector<int>& numbers) {
 	return a * b;
 }
 
-int evenFasterPairwise(const vector<int>& numbers) {
+int64_t evenFasterPairwise(const vector<int64_t>& numbers) {
 	int n = numbers.size();//length of the vector
-	int a=0;
-	int b=0;
+	int64_t a=0;
+	int64_t b=0;
 
 	for (int i = 0; i < n; ++i) {
 		if (numbers[i] > a) {
 			b = a;
 			a = numbers[i];
+		}
+		else if (numbers[i] > b) {
+			b = numbers[i];
 		}
 	}
 
@@ -62,24 +65,23 @@ int evenFasterPairwise(const vector<int>& numbers) {
 
 int main() {
 	//Stress testing two algorithms, a slower and faster
-	while (1) {
-		int n; //= 5;
-		n = rand() % 50 + 1;
-		//cin >> n;
-		vector<int> numbers(n);
 
-		cout << "Data Set : ";
+		int n; //= 5;
+		//n = rand() % 50 + 1;
+		cin >> n;
+		vector<int64_t> numbers(n);
+
+		//cout << "Data Set : ";
 		for (int i = 0; i < n; ++i) {
-			numbers[i] = rand();
-			//cin >> numbers[i];
-			cout << numbers[i]<<" ";
+			//numbers[i] = rand();
+			cin >> numbers[i];
+			//cout << numbers[i]<<" ";
 		}
-		cout << endl;
+		//cout << endl;
 
 		//Stress Failure condition
-		if (maxPairwiseProduct(numbers) != fastMaxPairwise(numbers)) {
-			cout << "Failed with: " << maxPairwiseProduct(numbers)<<"      "<< evenFasterPairwise(numbers) << endl;
+		//if (maxPairwiseProduct(numbers) != fastMaxPairwise(numbers)) {
+			cout << evenFasterPairwise(numbers) << endl;
 			return 0;
-		}
-	}
+		//}
 }

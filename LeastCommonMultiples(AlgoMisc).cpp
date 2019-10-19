@@ -26,7 +26,7 @@ long long lcm_fast(double a, double b) {
 int main() {
 	int a, b;
 	std::cin >> a >> b;
-	std::cout << lcm_naive(a, b) << std::endl;
+	//std::cout << lcm_naive(a, b) << std::endl;
 	std::cout << lcm_fast(a, b) << std::endl;
 	return 0;
 }

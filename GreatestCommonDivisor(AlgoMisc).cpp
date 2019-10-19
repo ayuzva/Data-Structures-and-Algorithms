@@ -24,18 +24,18 @@ int gcd_fast(int a, int b) {
 }
 
 int main() {
-	while (1) { //stress test for good mesure
+	//while (1) { //stress test for good mesure
 		int a, b;
-		//std::cin >> a >> b;
-		a = rand();
-		b = rand();
+		std::cin >> a >> b;
+		//a = rand();
+		//b = rand();
 		
-		std::cout << gcd_naive(a, b) << std::endl;
+		//std::cout << gcd_naive(a, b) << std::endl;
 		std::cout << gcd_fast(a, b) << std::endl;
 
-		if (gcd_naive(a, b) != gcd_fast(a, b)) {
+		/*if (gcd_naive(a, b) != gcd_fast(a, b)) {
 			std::cout << "Failed" << std::endl;
-			return 0;
-		}
-	}
+			return 0;*/
+	//	}
+	//}
 }

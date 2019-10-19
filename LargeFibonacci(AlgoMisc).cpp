@@ -37,8 +37,8 @@ int get_fibonacci_last_digit_fast(int n) {
 int main() {
 	int n;
 	cin >> n;
-	int c = get_fibonacci_last_digit_naive(n);
+	//int c = get_fibonacci_last_digit_naive(n);
 	//Native algorithm does not actually work for big numbers, while fast does
-	cout << c << '\n';
+	//cout << c << '\n';
 	cout << get_fibonacci_last_digit_fast(n) << endl;
 }
