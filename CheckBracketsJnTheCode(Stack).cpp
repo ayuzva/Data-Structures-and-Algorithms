@@ -52,7 +52,7 @@ int main() {
 		cout << "Success" << endl;
 	}
 	else {
-		cout << "1" << endl;
+		cout << opening_brackets_stack.top().position+1 << endl;
 	}
 	return 0;
 }

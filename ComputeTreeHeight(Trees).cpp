@@ -12,6 +12,7 @@ class Node;
 class Node {
 public:
 	int key;
+	int NodeHeight;
 	Node* parent;
 	std::vector<Node*> children;
 
@@ -47,6 +48,7 @@ int main_with_large_stack_space() {
 
 	std::stack<Node*> dfs;
 	dfs.push(&nodes[root]);//root on the stack
+	dfs.top()->NodeHeight = NULL;
 
 	int height = 0;
 	int maxHeight = 0;
@@ -55,15 +57,18 @@ int main_with_large_stack_space() {
 	while (dfs.empty() == false) {
 		currNode = dfs.top();
 		dfs.pop();
-		
+
 		height++;
-		maxHeight = std::max(maxHeight,height);
 
 		if (currNode->children.empty() == true) {
-			height--;
+			maxHeight = std::max(maxHeight, height);
+			if(dfs.empty() != true)
+				height=dfs.top()->NodeHeight;//Go down not only once
 		}
+
 		for (int i = currNode->children.size()-1; i >= 0 ; i--) {
 			dfs.push(currNode->children[i]);
+			currNode->children[i]->NodeHeight = height;
 		}
 	}
 
