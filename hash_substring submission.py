@@ -20,7 +20,7 @@ def PrecomputeHashes(T,P_len,p,x):#Something wrong here probably
     S=T[(len(T)-P_len):len(T)]
     H[len(T)-P_len] = poly_hash(S,p,x)
     y=1
-    for i in range(1,P_len):
+    for i in range(1,P_len+1):
         y=((y*x)%p+p)%p
     for i in range((len(T)-P_len-1),-1,-1):
         H[i]=((x*H[i+1] + ord(T[i]) - y*ord(T[i + P_len])) % p + p) % p    
