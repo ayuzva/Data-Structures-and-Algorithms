@@ -1,2 +1,2 @@
 # Data-Structures-and-Algorithms
-A collection of projects from Data Structures and Algorithm specialization courses
+A collection of assignments from Data Structures and Algorithm specialization courses
